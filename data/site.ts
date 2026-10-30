@@ -7,8 +7,8 @@ export const profile = {
   name: "Ryan Lam",
   email: "ryanlamcw015@gmail.com",
   linkedin: "https://www.linkedin.com/in/ryancwlam",
-  github: "", // add your GitHub URL, e.g. "https://github.com/yourname" (hidden while empty)
-  cruxRepo: "", // add the Crux repo / live URL when ready
+  github: "https://github.com/ryanlamcw015",
+  cruxRepo: "https://github.com/ryanlamcw015/crux",
   roles: [
     "Software engineer",
     "AI & automation builder",
@@ -159,7 +159,7 @@ export const projects: Project[] = [
     slug: "crux",
     kind: "Full-stack · Geospatial · Data",
     title: "Crux",
-    context: "Personal project · Sep 2026 – Present",
+    context: "Personal project · Sep 2026",
     blurb:
       "A social climbing and conditions app: see who's climbing at indoor gyms and outdoor crags, find partners, log sends, and know when the rock is actually in condition.",
     metrics: [
