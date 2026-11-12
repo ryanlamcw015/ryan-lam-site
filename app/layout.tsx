@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Kit from "@/components/Kit";
+import Fx from "@/components/Fx";
 
 const title = "Ryan Lam: software engineer and business analyst at UW–Madison";
 const description =
@@ -12,10 +13,10 @@ export const metadata: Metadata = {
   openGraph: { title, description, type: "website", images: ["/share.jpg"] },
   twitter: { card: "summary_large_image" },
   icons: { icon: "/favicon.svg" },
-  other: { "site-kind": "other", "page-type": "service", "theme-color": "#f7f9fa" },
+  other: { "site-kind": "other", "page-type": "service", "theme-color": "#07131c" },
 };
 
-const root = `:root{--p-bg:#f7f9fa;--p-surface:#ecf0f2;--p-ink:#1f3038;--p-muted:#5d6b72;--p-accent:#0d7480;--p-accent-ink:#ffffff;--p-action:#0d7480;--p-action-ink:#ffffff;--p-inv-bg:#1f3038;--p-inv-surface:#2c3c44;--p-inv-ink:#f7f9fa;--p-inv-muted:#9ea7ab;--p-inv-accent:#f7f9fa;--p-inv-accent-ink:#1f3038;--p-inv-action:#f7f9fa;--p-inv-action-ink:#1f3038;--font-display:"Instrument Sans",system-ui,sans-serif;--font-text:"Instrument Sans",system-ui,sans-serif;--display-weight:400;--display-tracking:-0.028em;--display-tracking-xl:-0.036em;--display-stretch:96%;--ly-scale:1.04}`;
+const root = `:root{--p-bg:#07131c;--p-surface:#0f2431;--p-ink:#eaf6f7;--p-muted:#9db7bf;--p-accent:#38e0d1;--p-accent-ink:#032a2d;--p-action:#38e0d1;--p-action-ink:#032a2d;--p-inv-bg:#07131c;--p-inv-surface:#0f2431;--p-inv-ink:#eaf6f7;--p-inv-muted:#9db7bf;--p-inv-accent:#38e0d1;--p-inv-accent-ink:#032a2d;--p-inv-action:#38e0d1;--p-inv-action-ink:#032a2d;--font-display:"Instrument Sans",system-ui,sans-serif;--font-text:"Instrument Sans",system-ui,sans-serif;--display-weight:400;--display-tracking:-0.028em;--display-tracking-xl:-0.036em;--display-stretch:96%;--ly-scale:1.04}`;
 
 const enter = `document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700);document.documentElement.classList.add('mo-js');setTimeout(()=>document.documentElement.classList.add('mo-safe'),2500)`;
 
@@ -39,6 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         {children}
+        <Fx />
         <Kit />
       </body>
     </html>

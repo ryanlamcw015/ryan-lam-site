@@ -60,3 +60,67 @@
   .tools .ic-tile { --tile: 56px; }
   #education .pills > .pill:nth-child(n+7) { display: none; }
 }
+
+/* ===== Playful layer: dark base, moving mesh, bubbles, glossy buttons and frames, 3D tilt ===== */
+html, body { background: #07131c; color: var(--p-ink); }
+html main > section, html .section, html footer.closing { background: transparent; }
+.fx-mesh { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none;
+  background: radial-gradient(120% 80% at 50% -10%, #0e2d3d 0%, #07131c 60%); }
+.fx-mesh i { position: absolute; width: 60vmax; height: 60vmax; border-radius: 50%; filter: blur(80px); opacity: .55; will-change: transform; }
+.fx-mesh i:nth-child(1) { background: radial-gradient(circle, #14b8a6 0%, transparent 65%); left: -15vmax; top: 10vh; animation: mesh1 22s ease-in-out infinite alternate; }
+.fx-mesh i:nth-child(2) { background: radial-gradient(circle, #2563eb 0%, transparent 65%); right: -20vmax; top: 40vh; animation: mesh2 28s ease-in-out infinite alternate; }
+.fx-mesh i:nth-child(3) { background: radial-gradient(circle, #f97362 0%, transparent 65%); left: 20vw; bottom: -30vmax; opacity: .32; animation: mesh3 32s ease-in-out infinite alternate; }
+@keyframes mesh1 { to { transform: translate(30vw, 20vh) scale(1.2) rotate(40deg); } }
+@keyframes mesh2 { to { transform: translate(-25vw, -25vh) scale(.85); } }
+@keyframes mesh3 { to { transform: translate(25vw, -20vh) scale(1.25); } }
+.fx-bubbles { position: fixed; inset: 0; z-index: 2; pointer-events: none; }
+
+/* bubbly buttons: glossy, springy, squish on press (individual transform properties, so the kit's own hover still works) */
+html .btn { border-radius: 999px; position: relative; overflow: hidden; isolation: isolate; border: 1px solid rgba(255,255,255,.22);
+  transition: scale .45s cubic-bezier(.34,1.7,.5,1), translate .45s cubic-bezier(.34,1.7,.5,1), box-shadow .3s, filter .3s; }
+html .btn::before { content: ""; position: absolute; z-index: -1; left: 8%; right: 8%; top: 4px; height: 46%; border-radius: 999px;
+  background: linear-gradient(rgba(255,255,255,.6), rgba(255,255,255,0)); pointer-events: none; }
+html .btn--primary { color: #032a2d; border-color: rgba(255,255,255,.5);
+  background: radial-gradient(120% 140% at 30% 0%, #8ff7ec 0%, #2fd1c5 45%, #0d8f88 100%);
+  box-shadow: inset 0 -6px 12px rgba(0,70,70,.4), inset 0 2px 4px rgba(255,255,255,.7), 0 12px 32px -8px rgba(56,224,209,.65); }
+html .btn--secondary { color: var(--p-ink); background: rgba(255,255,255,.1); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.35), 0 10px 28px -10px rgba(0,0,0,.6); }
+html .btn:hover { scale: 1.07; translate: 0 -3px; filter: brightness(1.08); }
+html .btn:active { scale: .93 .88; translate: 0 1px; }
+html .pill { border-radius: 999px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.2); backdrop-filter: blur(8px);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.3); transition: scale .35s cubic-bezier(.34,1.7,.5,1), background .3s; }
+html .pill:hover { scale: 1.08; background: rgba(56,224,209,.2); }
+html .tab { border-radius: 999px; }
+html .nav { background: rgba(7,19,28,.72); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+
+/* bubbly frames: big radius, glass, glossy edge, 3D tilt target */
+html .card, html .develop, html .frame--photo, html .menu-card .panel {
+  border-radius: 32px; transform-style: preserve-3d; will-change: transform;
+  transition: transform .25s ease-out, box-shadow .3s, border-color .3s; }
+html .card { background: linear-gradient(160deg, rgba(255,255,255,.12), rgba(255,255,255,.04)); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,.18);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.4), inset 0 -10px 30px rgba(56,224,209,.05), 0 30px 60px -30px rgba(0,0,0,.7); }
+html .card:hover { border-color: rgba(56,224,209,.55); box-shadow: inset 0 1px 0 rgba(255,255,255,.5), 0 0 0 1px rgba(56,224,209,.25), 0 40px 80px -30px rgba(56,224,209,.35); }
+html .develop, html .frame--photo { border: 1px solid rgba(255,255,255,.25); box-shadow: 0 40px 80px -30px rgba(0,0,0,.8), 0 0 60px -20px rgba(56,224,209,.45); }
+html .card::after, .develop::after, .frame--photo::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+  background: radial-gradient(260px circle at var(--gx, 30%) var(--gy, 0%), rgba(255,255,255,.16), transparent 60%); opacity: 0; transition: opacity .3s; }
+html .card:hover::after, .develop:hover::after, .frame--photo:hover::after { opacity: 1; }
+html .ic-tile { border-radius: 26px; background: rgba(255,255,255,.92); transition: transform .25s ease-out, box-shadow .3s;
+  box-shadow: inset 0 -6px 12px rgba(0,0,0,.08), 0 14px 30px -10px rgba(56,224,209,.5); animation: bob 5s ease-in-out infinite; }
+.tools .ic-tile:nth-child(3n) { animation-delay: -1.2s; } .tools .ic-tile:nth-child(3n+1) { animation-delay: -2.6s; } .tools .ic-tile:nth-child(4n) { animation-delay: -3.7s; }
+@keyframes bob { 50% { translate: 0 -8px; } }
+
+/* scroll reveal: springy rise */
+.fx-reveal { opacity: 0; translate: 0 36px; scale: .96; transition: opacity .8s ease, translate .9s cubic-bezier(.2,1.2,.3,1), scale .9s cubic-bezier(.2,1.2,.3,1); }
+.fx-reveal.fx-in { opacity: 1; translate: 0 0; scale: 1; }
+.rows > li.fx-reveal:nth-child(2) { transition-delay: .08s; } .rows > li.fx-reveal:nth-child(3) { transition-delay: .16s; } .rows > li.fx-reveal:nth-child(4) { transition-delay: .24s; }
+
+/* headings catch the light */
+html h2 { background: linear-gradient(100deg, #fff 30%, #8ff7ec 70%, #fff); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; background-size: 200% 100%; animation: shine 9s linear infinite; }
+html h2 .muted { -webkit-text-fill-color: var(--p-muted); }
+@keyframes shine { to { background-position: -200% 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .fx-mesh i, .ic-tile, html h2 { animation: none; }
+  .fx-reveal { opacity: 1; translate: none; scale: 1; }
+}
