@@ -1,0 +1,64 @@
+{
+ "note": "Credits for the photographs in this folder: photos.mjs credits prints the footer block for the ones the pages use.",
+ "photos": [
+  {
+   "file": "photo-f96656755.jpg",
+   "files": [
+    "photo-f96656755-500.jpg",
+    "photo-f96656755-960.jpg",
+    "photo-f96656755-1280.jpg",
+    "photo-f96656755.jpg"
+   ],
+   "id": "f96656755",
+   "alt": "Night view of Bascom Hall 08-31-2013 004 (9670361740)",
+   "by": "Richard Hurd from Green Bay, USA",
+   "licence": "CC BY 2.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Night_view_of_Bascom_Hall_08-31-2013_004_(9670361740).jpg",
+   "source": "Wikimedia Commons"
+  },
+  {
+   "file": "photo-f150461869-960.jpg",
+   "files": [
+    "photo-f150461869-500.jpg",
+    "photo-f150461869-960.jpg"
+   ],
+   "id": "f150461869",
+   "alt": "Front of Bascom Hall (53369882376)",
+   "by": "Chris Rycroft from Madison, Wisconsin, United States",
+   "licence": "CC BY 2.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Front_of_Bascom_Hall_(53369882376).jpg",
+   "source": "Wikimedia Commons"
+  },
+  {
+   "file": "photo-f84641022.jpg",
+   "files": [
+    "photo-f84641022-500.jpg",
+    "photo-f84641022-960.jpg",
+    "photo-f84641022.jpg"
+   ],
+   "id": "f84641022",
+   "alt": "Summer solstice sunset - Madison WI - 06-21-2015 778 (19075952195)",
+   "by": "Richard Hurd from Green Bay, USA",
+   "licence": "CC BY 2.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Summer_solstice_sunset_-_Madison_WI_-_06-21-2015_778_(19075952195).jpg",
+   "source": "Wikimedia Commons"
+  },
+  {
+   "file": "photo-f31890655-960.jpg",
+   "files": [
+    "photo-f31890655-500.jpg",
+    "photo-f31890655-960.jpg"
+   ],
+   "id": "f31890655",
+   "alt": "Bascom Hill University of Wisconsin",
+   "by": "Runawaysquash",
+   "licence": "CC BY-SA 3.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Bascom_Hill_University_of_Wisconsin.jpg",
+   "source": "Wikimedia Commons"
+  }
+ ]
+}
