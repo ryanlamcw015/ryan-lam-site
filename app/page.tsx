@@ -43,7 +43,6 @@ export default function Home() {
                     <a href="#projects">Sports data pipelines<span>Hong Kong Jockey Club</span></a>
                   </div>
                   <a className="menu-card span-3 start-10" href="#education">
-                    <div className="panel"><img className="frame__img" src={img(photos.hill.src)} alt={photos.hill.alt} width="500" height="376" /></div>
                     <span className="t-card">Education</span>
                     <span className="t-small muted">UW–Madison, class of 2027</span>
                   </a>
@@ -102,15 +101,14 @@ export default function Home() {
                 {about.paragraphs.map((p, i) => (
                   <p key={i} className={i === 0 ? "t-lead" : undefined}>{p}</p>
                 ))}
+              </div>
+              <div className="card about-card span-6 start-7">
                 <ul className="rows">
                   <li><span className="rows__name">Study</span><span className="rows__value">Data Science & CS, minor Consulting</span></li>
                   <li><span className="rows__name">Languages</span><span className="rows__value">English, Cantonese, Mandarin</span></li>
                   <li><span className="rows__name">Outside work</span><span className="rows__value">UW USAC Climbing Team</span></li>
                 </ul>
               </div>
-              <figure className="develop span-6 start-7" data-moment="picture-develops">
-                <img src={img(photos.about.src)} alt={photos.about.alt} width="960" height="768" loading="lazy" decoding="async" data-source="stand-in" data-subject="campus" />
-              </figure>
             </div>
           </div>
         </section>
@@ -194,10 +192,10 @@ export default function Home() {
                     <li key={e}><span className="rows__name">{e}</span></li>
                   ))}
                 </ul>
-                <div className="pills">{education.courses.map((c) => <span className="pill" key={c}>{c}</span>)}</div>
               </div>
-              <div className="frame frame--photo frame--fill span-6 start-7">
-                <img className="frame__img" src={img(photos.education.src)} alt={photos.education.alt} width="960" height="464" loading="lazy" decoding="async" data-source="stand-in" data-subject="campus" />
+              <div className="card span-6 start-7">
+                <h3>Relevant coursework</h3>
+                <div className="pills">{education.courses.map((c) => <span className="pill" key={c}>{c}</span>)}</div>
               </div>
             </div>
           </div>
@@ -249,7 +247,7 @@ export default function Home() {
               <details className="credits">
                 <summary>Photographs via Wikimedia Commons</summary>
                 <p>
-                  Bascom Hall at night and Summer solstice sunset by Richard Hurd, Front of Bascom Hall by Chris Rycroft (all CC BY 2.0); Bascom Hill by Runawaysquash (CC BY-SA 3.0). Product names and logos are trademarks of their owners.
+                  Night view of Bascom Hall by Richard Hurd (CC BY 2.0). Product names and logos are trademarks of their owners.
                 </p>
               </details>
             </div>

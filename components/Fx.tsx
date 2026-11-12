@@ -61,6 +61,20 @@ function Bubbles() {
 export default function Fx() {
   useEffect(() => {
     const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const hero = document.querySelector<HTMLElement>(".hero--photo");
+    let hp = 0, mx = 0, my = 0, tmx = 0, tmy = 0, hraf = 0;
+    const heroTick = () => {
+      if (!hero) return;
+      hp = Math.min(Math.max(scrollY / innerHeight, 0), 1);
+      mx += (tmx - mx) * 0.07; my += (tmy - my) * 0.07;
+      hero.style.setProperty("--hp", hp.toFixed(3));
+      hero.style.setProperty("--hmx", mx.toFixed(3));
+      hero.style.setProperty("--hmy", my.toFixed(3));
+      hraf = hp < 1 || Math.abs(tmx - mx) > 0.001 ? requestAnimationFrame(heroTick) : 0;
+    };
+    const kick = () => { if (!hraf && !reduced) hraf = requestAnimationFrame(heroTick); };
+    const heroMove = (e: PointerEvent) => { tmx = e.clientX / innerWidth - 0.5; tmy = e.clientY / innerHeight - 0.5; kick(); };
+    if (hero && !reduced) { addEventListener("scroll", kick, { passive: true }); addEventListener("pointermove", heroMove); kick(); }
     const fine = matchMedia("(hover: hover) and (pointer: fine)").matches;
     const sel = ".card, .develop, .frame--photo, .menu-card .panel, .ic-tile";
     const tilt = (e: PointerEvent) => {
@@ -83,13 +97,12 @@ export default function Fx() {
       io ??= new IntersectionObserver((es) => es.forEach((en) => { if (en.isIntersecting) { en.target.classList.add("fx-in"); io!.unobserve(en.target); } }), { rootMargin: "0px 0px -8% 0px" });
       els.forEach((el) => { if (!el.classList.contains("fx-in") && !el.classList.contains("fx-reveal")) { el.classList.add("fx-reveal"); io!.observe(el); } });
     };
-    if (!reduced) { const t = setTimeout(mark, 700); const mo = new MutationObserver(() => mark()); mo.observe(document.querySelector("main")!, { childList: true, subtree: true }); return () => { clearTimeout(t); mo.disconnect(); io?.disconnect(); document.removeEventListener("pointermove", tilt); document.removeEventListener("pointerout", reset); }; }
+    if (!reduced) { const t = setTimeout(mark, 700); const mo = new MutationObserver(() => mark()); mo.observe(document.querySelector("main")!, { childList: true, subtree: true }); return () => { removeEventListener("scroll", kick); removeEventListener("pointermove", heroMove); clearTimeout(t); mo.disconnect(); io?.disconnect(); document.removeEventListener("pointermove", tilt); document.removeEventListener("pointerout", reset); }; }
     return () => { document.removeEventListener("pointermove", tilt); document.removeEventListener("pointerout", reset); };
   }, []);
   return (
     <>
       <div className="fx-mesh" aria-hidden="true"><i /><i /><i /></div>
-      <Bubbles />
     </>
   );
 }

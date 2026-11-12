@@ -34,9 +34,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="stylesheet" href="/assets/icons/icon.css" />
         <style dangerouslySetInnerHTML={{ __html: root }} />
         <script dangerouslySetInnerHTML={{ __html: enter }} />
-        <link rel="modulepreload" href="/assets/moments/moments.js" />
-        <link rel="modulepreload" href="/assets/moments/lib.js" />
-        <link rel="modulepreload" href="/assets/moments/picture-develops/moment.js" />
       </head>
       <body>
         {children}
