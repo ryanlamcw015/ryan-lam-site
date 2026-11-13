@@ -140,3 +140,8 @@ html h2 .muted { -webkit-text-fill-color: var(--p-muted); }
 .about-card, .card h3 + .pills { margin-top: 0; }
 .card > h3 + .pills { margin-top: var(--s-4); }
 .about-card, #education .card { align-self: start; }
+html .about-card { align-self: start; display: grid; gap: var(--s-4); }
+.about-card .rows > li:last-child { border-bottom: 0; }
+.about-card__h { font-size: var(--t-card); font-weight: 500; margin-top: var(--s-2); }
+.hero-links { margin-top: var(--s-5); }
+.hero-links .pill { font-size: var(--t-small); text-decoration: none; }

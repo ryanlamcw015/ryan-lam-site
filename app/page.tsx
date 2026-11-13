@@ -86,6 +86,12 @@ export default function Home() {
                   <a className="btn btn--primary" href={mailto}>{profile.action}<Arrow /></a>
                   <a className="btn btn--secondary" href="#projects">See my projects</a>
                 </div>
+                <div className="pills hero-links">
+                  <a className="pill" href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+                    <a className="pill" href={profile.github} target="_blank" rel="noreferrer">GitHub</a>
+                    <a className="pill" href="/resume/Ryan_Lam_Resume_Engineering.pdf" target="_blank" rel="noreferrer">Engineering resume</a>
+                    <a className="pill" href="/resume/Ryan_Lam_Resume_Business.pdf" target="_blank" rel="noreferrer">Business resume</a>
+                </div>
               </div>
             </div>
           </div>
@@ -96,7 +102,7 @@ export default function Home() {
             <div className="section-head">
               <h2 id="about-h">{about.title} <span className="muted">{about.sub}</span></h2>
             </div>
-            <div className="grid grid--top fill">
+            <div className="grid grid--top">
               <div className="span-6 stack-5">
                 {about.paragraphs.map((p, i) => (
                   <p key={i} className={i === 0 ? "t-lead" : undefined}>{p}</p>
@@ -108,6 +114,14 @@ export default function Home() {
                   <li><span className="rows__name">Languages</span><span className="rows__value">English, Cantonese, Mandarin</span></li>
                   <li><span className="rows__name">Outside work</span><span className="rows__value">UW USAC Climbing Team</span></li>
                 </ul>
+                <h3 className="about-card__h">Find me and my resumes</h3>
+                <div className="pills">
+                    <a className="pill" href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+                    <a className="pill" href={profile.github} target="_blank" rel="noreferrer">GitHub</a>
+                    <a className="pill" href="/resume/Ryan_Lam_Resume_Engineering.pdf" target="_blank" rel="noreferrer">Engineering resume</a>
+                    <a className="pill" href="/resume/Ryan_Lam_Resume_Business.pdf" target="_blank" rel="noreferrer">Business resume</a>
+                    <a className="pill" href={mailto}>Email</a>
+                </div>
               </div>
             </div>
           </div>
