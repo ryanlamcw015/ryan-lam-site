@@ -33,34 +33,6 @@
 .tools { display: grid; grid-template-columns: repeat(4, 72px); gap: var(--s-4); justify-content: start; align-content: start; }
 @media (max-width: 1023px) { .tools { grid-template-columns: repeat(auto-fill, 72px); margin-top: var(--s-6); } }
 
-/* tablet and phone: each section keeps to its screens (the kit's rule), so the stacked content is trimmed, not shrunk */
-@media (min-width: 640px) and (max-width: 1279px) {
-  .role .pts > li:nth-child(n+3) { display: none; }
-  .crux .pts { display: none; }
-  #experience .section-head p, #projects .section-head p { display: none; }
-  .tabs { margin-top: var(--s-4); margin-bottom: var(--s-4); }
-}
-@media (min-width: 640px) and (max-width: 1023px) {
-  #experience, #projects { --h: 2; }
-  .case .t-label, .case > p:not(.t-label):not(.t-small) { display: none; }
-  #about .develop { aspect-ratio: 16 / 9; }
-  #about .rows { display: none; }
-}
-@media (max-width: 639px) {
-  html .hero--photo { --photo: 36svh; }
-  .role .pts > li:nth-child(n+3) { display: none; }
-  .crux .pts, .case > p:not(.t-label):not(.t-small) { display: none; }
-  #about .rows, #about .stack-5 > p:nth-child(2) { display: none; }
-  #about .develop { aspect-ratio: 3 / 2; }
-  #experience { --hm: 3; }
-  #experience .section-head p { display: none; }
-  #skills .muted, #education h2 .muted { display: none; }
-  #skills .rows > li:last-child { display: none; }
-  .tools { grid-template-columns: repeat(auto-fill, 56px); gap: var(--s-3); }
-  .tools .ic-tile { --tile: 56px; }
-  #education .pills > .pill:nth-child(n+7) { display: none; }
-}
-
 /* ===== Playful layer: dark base, moving mesh, bubbles, glossy buttons and frames, 3D tilt ===== */
 html, body { background: #07131c; color: var(--p-ink); }
 html main > section, html .section, html footer.closing { background: transparent; }
@@ -145,3 +117,21 @@ html .about-card { align-self: start; display: grid; gap: var(--s-4); }
 .about-card__h { font-size: var(--t-card); font-weight: 500; margin-top: var(--s-2); }
 .hero-links { margin-top: var(--s-5); }
 .hero-links .pill { font-size: var(--t-small); text-decoration: none; }
+
+/* flow layout: sections grow with their content (no forced screen heights), tighter padding, nothing overlaps at any width */
+html main > section.section:not(.hero), html footer.closing { height: auto; min-height: 0; --padt: 88px; --padb: 48px; }
+html main > .g2 > .wrap, html footer.closing > .wrap { display: flex; flex-direction: column; gap: var(--s-6); grid-template-rows: none; row-gap: var(--s-6); }
+html main > .g2 > .wrap > * { align-self: stretch; margin: 0; }
+@media (max-width: 639px) { html main > section.section:not(.hero), html footer.closing { --padt: 64px; --padb: 32px; } }
+.section-head { margin-bottom: var(--s-5); }
+.tools { grid-template-columns: repeat(auto-fill, 72px); gap: var(--s-4); justify-content: start; }
+.logos-row { display: flex; flex-wrap: wrap; gap: var(--s-3); }
+.logos-row .ic-tile { --tile: 48px; animation: none; }
+.crux__side { justify-content: flex-start; }
+@media (max-width: 1023px) { .crux { grid-template-columns: 1fr; } .tools { margin-top: var(--s-5); } }
+html main > section > .wrap, html footer.closing > .wrap { height: auto; }
+html main > section > .wrap > .fill, html .group > .fill, html .grid.fill { flex: 0 0 auto; min-height: 0; }
+html .grid > * { min-width: 0; }
+html main > section.section > .wrap > .grid.fill, html main > section.section > .wrap > .group > .fill { flex: 0 0 auto; height: auto; min-height: 0; }
+html main > section.section > .wrap { display: flex; flex-direction: column; gap: var(--s-5); }
+html main > section.section > .wrap > .section-head { margin-bottom: 0; }

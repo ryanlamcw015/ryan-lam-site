@@ -13,8 +13,8 @@ export const profile = {
 };
 
 export const hero = {
-  h1: "Ryan Lam, software engineer",
-  lead: "Data Science and Computer Science student at UW–Madison, class of 2027, with a 3.8 GPA. I build AI agents, data pipelines and apps for finance and sales teams.",
+  h1: "Ryan Lam, tech and business",
+  lead: "Data Science and Computer Science student at UW–Madison, class of 2027, with a 3.8 GPA. I work across AI, data, product, consulting, sales and finance.",
   facts: [
     { k: "School", v: "UW–Madison, class of 2027" },
     { k: "GPA", v: "3.8 out of 4.0" },
@@ -24,7 +24,7 @@ export const hero = {
 };
 
 export const about = {
-  title: "Software for business teams.",
+  title: "Technology for business teams.",
   sub: "Built across finance, sales and sports data.",
   paragraphs: [
     "I like writing the code, and I like knowing why the work matters to the finance lead, the sales team or the climber checking conditions on a Friday night.",
@@ -150,6 +150,7 @@ export type Project = {
   blurb: string;
   metrics: { v: string; l: string }[];
   stack: string[];
+  icons: string[];
   points?: string[];
 };
 
@@ -172,6 +173,7 @@ export const projects: Project[] = [
       "Next: friends, an activity feed and a partner finder matching climbers by grade, location and availability.",
     ],
     stack: ["Python", "FastAPI", "PostgreSQL/PostGIS", "React", "TypeScript", "Docker", "Leaflet"],
+    icons: ["python", "fastapi", "postgres", "react", "typescript", "docker"],
   },
   {
     slug: "finance-agents",
@@ -184,6 +186,7 @@ export const projects: Project[] = [
       { v: "~35%", l: "faster agent builds" },
     ],
     stack: ["Copilot Studio", "Azure AI", "RAG", "Power Automate", "Dataverse"],
+    icons: ["azure", "github", "jira"],
   },
   {
     slug: "discovery-engine",
@@ -196,6 +199,7 @@ export const projects: Project[] = [
       { v: "95%", l: "dedupe match rate" },
     ],
     stack: ["Python", "LLM agents", "Pandas", "Salesforce", "ZoomInfo"],
+    icons: ["python", "salesforce"],
   },
   {
     slug: "sports-pipeline",
@@ -208,6 +212,7 @@ export const projects: Project[] = [
       { v: "~50%", l: "faster reporting" },
     ],
     stack: ["Python", "SQL", "Pandas", "NumPy", "Matplotlib"],
+    icons: ["python", "xlsx"],
   },
 ];
 
@@ -222,11 +227,16 @@ export const toolIcons = [
   { file: "azure", name: "Azure" },
   { file: "aws", name: "AWS" },
   { file: "google-cloud", name: "Google Cloud" },
+  { file: "postgres", name: "PostgreSQL" },
+  { file: "xlsx", name: "Excel" },
+  { file: "linux-tux", name: "Linux" },
   { file: "git", name: "Git" },
   { file: "github", name: "GitHub" },
   { file: "salesforce", name: "Salesforce" },
   { file: "jira", name: "Jira" },
 ];
+
+export const openTo = ["Software engineering", "Product management", "Tech consulting", "Tech sales", "Finance and strategy"];
 
 export const skills = [
   { group: "Coding languages", items: "Python, TypeScript, JavaScript, Java, SQL, R, HTML/CSS" },

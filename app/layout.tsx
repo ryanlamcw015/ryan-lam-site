@@ -3,9 +3,9 @@ import "./globals.css";
 import Kit from "@/components/Kit";
 import Fx from "@/components/Fx";
 
-const title = "Ryan Lam: software engineer and business analyst at UW–Madison";
+const title = "Ryan Lam: tech and business student at UW–Madison";
 const description =
-  "Data Science and Computer Science student at UW–Madison. I build AI agents, data pipelines and apps for finance and sales teams. Open to internships and roles.";
+  "Data Science and Computer Science student at UW–Madison working across AI, data, product, consulting, sales and finance. Open to internships and roles.";
 
 export const metadata: Metadata = {
   title,

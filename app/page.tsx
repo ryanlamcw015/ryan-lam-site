@@ -1,6 +1,6 @@
 import type { CSSProperties } from "react";
 import Experience from "@/components/Experience";
-import { about, education, experience, hero, photos, profile, projects, skills, toolIcons } from "@/data/site";
+import { about, education, experience, hero, openTo, photos, profile, projects, skills, toolIcons } from "@/data/site";
 
 const mailto = `mailto:${profile.email}`;
 const img = (f: string) => `/assets/img/${f}`;
@@ -110,6 +110,7 @@ export default function Home() {
               </div>
               <div className="card about-card span-6 start-7">
                 <ul className="rows">
+                  <li><span className="rows__name">Open to</span><span className="rows__value">{openTo.join(", ")}</span></li>
                   <li><span className="rows__name">Study</span><span className="rows__value">Data Science & CS, minor Consulting</span></li>
                   <li><span className="rows__name">Languages</span><span className="rows__value">English, Cantonese, Mandarin</span></li>
                   <li><span className="rows__name">Outside work</span><span className="rows__value">UW USAC Climbing Team</span></li>
@@ -148,6 +149,7 @@ export default function Home() {
                   <div className="metrics">
                     {crux.metrics.map((m) => <div key={m.l}><b>{m.v}</b><span>{m.l}</span></div>)}
                   </div>
+                  <div className="logos-row">{crux.icons.map((f) => <span className="ic-tile ic-tile--48" key={f}><img className="ic ic-24" src={`/assets/icons/${f}.svg`} alt={f} width="24" height="24" loading="lazy" /></span>)}</div>
                   <div className="pills">{crux.stack.map((s) => <span className="pill" key={s}>{s}</span>)}</div>
                   <a className="link" href={profile.cruxRepo} target="_blank" rel="noreferrer">See Crux on GitHub</a>
                 </div>
@@ -163,6 +165,7 @@ export default function Home() {
                   <div className="metrics">
                     {p.metrics.map((m) => <div key={m.l}><b>{m.v}</b><span>{m.l}</span></div>)}
                   </div>
+                  <div className="logos-row">{p.icons.map((f) => <span className="ic-tile ic-tile--48" key={f}><img className="ic ic-24" src={`/assets/icons/${f}.svg`} alt={f} width="24" height="24" loading="lazy" /></span>)}</div>
                   <div className="pills">{p.stack.map((s) => <span className="pill" key={s}>{s}</span>)}</div>
                 </article>
               ))}
@@ -229,7 +232,7 @@ export default function Home() {
             <div className="grid">
               <div className="span-4 stack-4">
                 <a className="nav__logo" href="#top"><Mark />Ryan Lam</a>
-                <p className="footer__lede">Data Science and Computer Science student at UW–Madison, building software for business teams.</p>
+                <p className="footer__lede">Data Science and Computer Science student at UW–Madison, working across technology and business.</p>
               </div>
               <div className="span-2 start-7 footer__col">
                 <h3>Pages</h3>
