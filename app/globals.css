@@ -141,3 +141,22 @@ html main > section.hero.hero--photo { height: auto; min-height: max(100svh, 780
 @media (max-width: 1023px) { html main > section.hero.hero--photo { min-height: 100svh; } }
 html main > section.hero.hero--photo > .wrap, html main > section.hero.hero--photo .hero-text { height: auto; min-height: 0; }
 @media (max-width: 639px) { .hero-links .pill { flex: 0 1 auto; } }
+
+/* rows never collide: the name keeps its width, a long value wraps beside it, and on narrow cards they stack */
+html .rows > li { grid-template-columns: max-content minmax(0, 1fr); align-items: baseline; }
+html .rows .rows__name { white-space: nowrap; }
+html .rows .rows__value { text-align: right; min-width: 0; overflow-wrap: anywhere; }
+html .rows > li > p { grid-column: 1 / -1; }
+@media (max-width: 760px) { html .rows > li { grid-template-columns: minmax(0, 1fr); gap: var(--s-1); } html .rows .rows__value { text-align: left; } }
+
+/* project cards: air between the metrics, the logo tiles and the tags */
+.metrics + .logos-row { margin-top: var(--s-4); }
+.logos-row + .pills { margin-top: var(--s-3); }
+.case .metrics { margin-top: auto; }
+
+/* one glossy button, not a button inside a button: the shine is a soft fade across the top half, clipped by the button's own shape */
+html .btn::before { left: 0; right: 0; top: 0; height: 52%; border-radius: 0; opacity: .55;
+  background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,0)); }
+html .btn--secondary::before { opacity: .25; }
+html .btn--wide, html .btn--xl { justify-content: center; }
+html .rows .rows__value { white-space: normal; }
