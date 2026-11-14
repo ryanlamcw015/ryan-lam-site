@@ -135,3 +135,9 @@ html .grid > * { min-width: 0; }
 html main > section.section > .wrap > .grid.fill, html main > section.section > .wrap > .group > .fill { flex: 0 0 auto; height: auto; min-height: 0; }
 html main > section.section > .wrap { display: flex; flex-direction: column; gap: var(--s-5); }
 html main > section.section > .wrap > .section-head { margin-bottom: 0; }
+
+/* the hero grows with its content instead of clipping it: short windows keep a 780px stage, phones and tablets stack the photo band over the words */
+html main > section.hero.hero--photo { height: auto; min-height: max(100svh, 780px); padding-bottom: var(--s-8); }
+@media (max-width: 1023px) { html main > section.hero.hero--photo { min-height: 100svh; } }
+html main > section.hero.hero--photo > .wrap, html main > section.hero.hero--photo .hero-text { height: auto; min-height: 0; }
+@media (max-width: 639px) { .hero-links .pill { flex: 0 1 auto; } }
