@@ -30,10 +30,12 @@ export default function Experience({ roles }: { roles: Role[] }) {
   });
 
   const card = (c: (typeof cards)[number]) => (
-    <article className="card role span-6" key={c.key}>
-      <h3>{c.name}</h3>
-      <p className="role__title">{c.title}</p>
-      <p className="t-small muted">{c.meta}</p>
+    <article className="role" key={c.key}>
+      <div className="role__meta">
+        <h3>{c.name}</h3>
+        <p className="role__title">{c.title}</p>
+        <p className="t-small muted">{c.meta}</p>
+      </div>
       <ul className="pts">
         {c.items.map((t) => (
           <li key={t}>{t}</li>
@@ -43,23 +45,20 @@ export default function Experience({ roles }: { roles: Role[] }) {
   );
 
   return (
-    <section className="section g2" id="experience" aria-labelledby="experience-h">
+    <section className="section" id="experience" aria-labelledby="experience-h">
       <div className="wrap">
-        <div className="group">
-          <div className="section-head">
-            <h2 id="experience-h">Internships and leadership.</h2>
-            <p>Five internships and one student club. Switch the view to read the engineering or the business version of each role.</p>
-          </div>
-          <div className="tabs" role="tablist" aria-label="Experience view">
-            {lenses.map((l) => (
-              <button key={l.id} type="button" className="tab" role="tab" aria-selected={lens === l.id} onClick={() => setLens(l.id)}>
-                {l.label}
-              </button>
-            ))}
-          </div>
-          <div className="grid role-grid">{cards.slice(0, 2).map(card)}</div>
+        <div className="section-head">
+          <h2 id="experience-h">Internships and leadership.</h2>
+          <p>Five internships and one student club. Switch the view to read the engineering or the business version of each role.</p>
         </div>
-        <div className="grid role-grid">{cards.slice(2).map(card)}</div>
+        <div className="tabs" role="tablist" aria-label="Experience view">
+          {lenses.map((l) => (
+            <button key={l.id} type="button" className="tab" role="tab" aria-selected={lens === l.id} onClick={() => setLens(l.id)}>
+              {l.label}
+            </button>
+          ))}
+        </div>
+        <div className="role-list">{cards.map(card)}</div>
       </div>
     </section>
   );

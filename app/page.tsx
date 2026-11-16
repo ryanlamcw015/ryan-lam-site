@@ -130,10 +130,9 @@ export default function Home() {
 
         <Experience roles={experience} />
 
-        <section className="section g2" id="projects" aria-labelledby="projects-h">
+        <section className="section" id="projects" aria-labelledby="projects-h">
           <div className="wrap">
-            <div className="group">
-              <div className="section-head">
+            <div className="section-head">
                 <h2 id="projects-h">Projects and case studies.</h2>
                 <p>One full-stack project of my own, and three systems I shipped during internships.</p>
               </div>
@@ -154,7 +153,6 @@ export default function Home() {
                   <a className="link" href={profile.cruxRepo} target="_blank" rel="noreferrer">See Crux on GitHub</a>
                 </div>
               </article>
-            </div>
             <div className="grid">
               {cases.map((p) => (
                 <article className="card case span-4" key={p.slug}>

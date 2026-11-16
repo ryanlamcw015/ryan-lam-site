@@ -76,7 +76,7 @@ export default function Fx() {
     const heroMove = (e: PointerEvent) => { tmx = e.clientX / innerWidth - 0.5; tmy = e.clientY / innerHeight - 0.5; kick(); };
     if (hero && !reduced) { addEventListener("scroll", kick, { passive: true }); addEventListener("pointermove", heroMove); kick(); }
     const fine = matchMedia("(hover: hover) and (pointer: fine)").matches;
-    const sel = ".card, .develop, .frame--photo, .menu-card .panel, .ic-tile";
+    const sel = ".ic-tile, .menu-card .panel";
     const tilt = (e: PointerEvent) => {
       const el = (e.target as Element).closest(sel) as HTMLElement | null;
       if (!el) return;
